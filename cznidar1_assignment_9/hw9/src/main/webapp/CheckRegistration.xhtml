@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" >
+
+<!-- <ui:composition template="/WEB-INF/templates/simple.xhtml"> -->
+<h:head>
+
+	<title>Check Student Registration</title>
+
+
+	<style type="text/css">
+	.container{
+		border: 10px solid gray;
+		max-width: 700px;
+		margin: auto;
+		background: rgba(255, 90, 90, .7);
+		}
+	table, th, td {
+  		border: 1px solid black;
+}
+	</style>
+	
+</h:head>
+
+
+<h:body>
+
+	<div class="container">
+	
+	        <h1>Check Student Registration</h1>
+	        <h2>Enter Student Last Name:</h2>
+	  
+	        <h:form>
+	            <h:inputText value = "#{checkRegistrationSupportBean.inputName}" /> 
+	            <br/>
+	            #{checkRegistrationSupportBean.message}
+	            <br/>
+	            <br/>
+				
+				
+				
+				
+				
+				<h:dataTable value = "#{checkRegistrationSupportBean.courseData}" var = "registration">
+          
+		           <h:column>             
+		              <f:facet name = "header">First Name</f:facet>               
+		              #{registration.firstName}
+		           </h:column>
+		          
+		           <h:column>
+		              <f:facet name = "header">Last Name</f:facet>
+		              #{registration.lastName}
+		           </h:column>
+		          
+		           <h:column>
+		              <f:facet name = "header">Course ID</f:facet>
+		              #{registration.courseId}
+		           </h:column>
+		           
+		           <h:column>
+		              <f:facet name = "header">Course Name</f:facet>
+		              #{registration.courseName}
+		           </h:column>
+		           
+		        </h:dataTable>
+				
+				
+				
+				
+				
+				
+	            <h:commandButton value="Back" action="Welcome.jsp"/>
+	            <h:commandButton value="Submit" action="#{checkRegistrationSupportBean.getRegData}"/>
+	
+	        </h:form>
+	
+	    
+	</div>
+	
+</h:body>
+<!-- </ui:composition>  -->  
+
+</html>
