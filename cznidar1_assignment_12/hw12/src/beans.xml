@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id = "helloWorld" class = "znidarsic_c.HelloWorld" init-method = "postConstruct" destroy-method = "preDestroy">
+		<property name = "message" value = "Hello World!"/>
+	</bean>
+	<bean id = "helloWorld2" class = "znidarsic_c.HelloWorld2" init-method = "postConstruct" destroy-method = "preDestroy">
+		<property name = "message" value = "Hello World 2!"/>
+	</bean>
+	
+</beans>
